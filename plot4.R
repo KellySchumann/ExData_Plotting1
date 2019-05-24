@@ -1,7 +1,8 @@
-raw <- read.table("household_power_consumption.txt", header=TRUE, sep=";")
-ds <- subset(raw, Date == '1/2/2007' | Date == '2/2/2007')
+raw <- read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", colClasses = c("character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
+raw$Date <- as.Date(raw$Date, format="%d/%m/%Y")
+ds <- subset(raw, Date == '2007-02-01' | Date == '2007-02-02')
+ds$Time <- strptime(paste(ds$Date, ds$Time), "%F %T")
 rm(raw)
-ds$dtime <- strptime(paste(ds$Date,ds$Time,sep=" "), "%e/%m/%Y %H:%M:%S")
 
 # Create Plot4
 png("plot4.png", width=480, height = 480)
