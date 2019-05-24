@@ -6,5 +6,5 @@ rm(raw)
 
 # Create Plot2
 png("plot2.png", width=480, height=480)
-plot(ds$dtime, as.numeric(ds$Global_active_power), ylab="Global Active Power (kilowatts)", type="l", lty=1, xlab="")
+plot(ds$Time, as.numeric(ds$Global_active_power), ylab="Global Active Power (kilowatts)", type="l", lty=1, xlab="")
 dev.off()

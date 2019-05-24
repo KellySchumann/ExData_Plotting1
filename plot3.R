@@ -6,8 +6,8 @@ rm(raw)
 
 #Create Plot3
 png("plot3.png", width=480, height = 480)
-plot(ds$dtime, as.numeric(ds$Sub_metering_1), type="l", lty=1, col="black", ylab="Energy sub metering", xlab="")
-lines(ds$dtime, as.numeric(ds$Sub_metering_2), type="l", lty=1, col="red")
-lines(ds$dtime, as.numeric(ds$Sub_metering_3), type="l", lty=1, col="blue")
+plot(ds$Time, as.numeric(ds$Sub_metering_1), type="l", lty=1, col="black", ylab="Energy sub metering", xlab="")
+lines(ds$Time, as.numeric(ds$Sub_metering_2), type="l", lty=1, col="red")
+lines(ds$Time, as.numeric(ds$Sub_metering_3), type="l", lty=1, col="blue")
 legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black", "red", "blue"), lty=1)
 dev.off()
